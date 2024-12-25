@@ -167,4 +167,17 @@ button:focus:not(:active)::after {
 .fade-in {
     animation: fadeIn 0.5s ease forwards;
 }
+// Add fade-in animation when displaying new fact
+document.getElementById('generateFact').addEventListener('click', function() {
+    const factDisplay = document.getElementById('factDisplay');
+    const randomIndex = Math.floor(Math.random() * crocodileFacts.length);
+    
+    // Remove the class and void reflow to restart animation
+    factDisplay.classList.remove('fade-in');
+    void factDisplay.offsetWidth;
+    
+    // Add class and update text
+    factDisplay.classList.add('fade-in');
+    factDisplay.textContent = crocodileFacts[randomIndex];
+});
 
