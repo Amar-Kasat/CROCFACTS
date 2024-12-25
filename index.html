@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <button id="generateFact">Generate Fact</button>
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        const crocodileFacts = [
+            "Crocodiles have been around for over 200 million years, making them one of the oldest living reptiles, surviving the extinction event that wiped out the dinosaurs.",
+            "Crocodiles have one of the strongest bites in the animal kingdom. Their bite force can exceed 3,700 pounds per square inch (psi), which is stronger than that of a great white shark.",
+            "Crocodiles are excellent hunters. They often lie in wait, partially submerged in water, and use their powerful tails to propel themselves towards prey with incredible speed.",
+            "The sex of a crocodile is determined by the temperature of the nest during incubation. Warmer temperatures tend to produce males, while cooler temperatures produce females.",
+            "Crocodiles can swim at speeds of up to 20 miles per hour (32 kilometers per hour) by using their tails to propel themselves through the water.",
+            "Crocodiles can live for a long time, with some species living up to 70 years or more in the wild.",
+            "Unlike many reptiles, crocodiles are quite vocal. They communicate with each other through a variety of sounds, including growls, hisses, and bellows.",
+            "Crocodiles have a four-chambered heart, similar to birds and mammals, which allows them to efficiently oxygenate their blood and stay submerged underwater for extended periods.",
+            "Female crocodiles are known for their maternal instincts. They guard their nests and help their hatchlings reach the water after they emerge from their eggs.",
+            "While they primarily eat fish and mammals, crocodiles are opportunistic feeders and will eat almost anything they can catch, including birds, reptiles, and even other crocodiles."
+        ];
+
+        document.getElementById('generateFact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * crocodileFacts.length);
+            document.getElementById('factDisplay').textContent = crocodileFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
