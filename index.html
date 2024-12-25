@@ -1,183 +1,210 @@
-:root {
-    --primary-color: #2ecc71;
-    --primary-dark: #27ae60;
-    --background-color: #f5f6fa;
-    --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    --text-color: #2c3e50;
-    --container-bg: #ffffff;
-    --animation-speed: 0.3s;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts</title>
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --primary-dark: #27ae60;
+            --background-color: #f5f6fa;
+            --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --text-color: #2c3e50;
+            --container-bg: #ffffff;
+            --animation-speed: 0.3s;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-    color: var(--text-color);
-    line-height: 1.6;
-}
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-.container {
-    width: 100%;
-    max-width: 600px;
-    background-color: var(--container-bg);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: var(--box-shadow);
-    transition: transform var(--animation-speed) ease;
-}
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: var(--container-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--box-shadow);
+            transition: transform var(--animation-speed) ease;
+        }
 
-.container:hover {
-    transform: translateY(-5px);
-}
+        .container:hover {
+            transform: translateY(-5px);
+        }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-    text-align: center;
-}
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            text-align: center;
+        }
 
-button {
-    width: 100%;
-    max-width: 200px;
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all var(--animation-speed) ease;
-    display: block;
-    margin: 1.5rem auto;
-    position: relative;
-    overflow: hidden;
-}
+        button {
+            width: 100%;
+            max-width: 200px;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all var(--animation-speed) ease;
+            display: block;
+            margin: 1.5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
 
-button:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
-}
+        button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+        }
 
-button:active {
-    transform: translateY(0);
-}
+        button:active {
+            transform: translateY(0);
+        }
 
-button::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 5px;
-    height: 5px;
-    background: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    border-radius: 100%;
-    transform: scale(1, 1) translate(-50%);
-    transform-origin: 50% 50%;
-}
+        button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
 
-button:focus:not(:active)::after {
-    animation: ripple 1s ease-out;
-}
+        button:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
 
-#factDisplay {
-    font-size: 1.1rem;
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: rgba(46, 204, 113, 0.1);
-    border-radius: 0.5rem;
-    transition: opacity var(--animation-speed) ease;
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+        #factDisplay {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: rgba(46, 204, 113, 0.1);
+            border-radius: 0.5rem;
+            transition: opacity var(--animation-speed) ease;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-@keyframes ripple {
-    0% {
-        transform: scale(0, 0);
-        opacity: 0.5;
-    }
-    100% {
-        transform: scale(100, 100);
-        opacity: 0;
-    }
-}
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(100, 100);
+                opacity: 0;
+            }
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 1.5rem;
-    }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
 
-    h1 {
-        font-size: 2rem;
-    }
+            h1 {
+                font-size: 2rem;
+            }
 
-    button {
-        padding: 0.8rem 1.2rem;
-        font-size: 1rem;
-    }
+            button {
+                padding: 0.8rem 1.2rem;
+                font-size: 1rem;
+            }
 
-    #factDisplay {
-        font-size: 1rem;
-    }
-}
+            #factDisplay {
+                font-size: 1rem;
+            }
+        }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #1a1a1a;
-        --container-bg: #2d2d2d;
-        --text-color: #ffffff;
-        --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1a1a1a;
+                --container-bg: #2d2d2d;
+                --text-color: #ffffff;
+                --box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            }
 
-    #factDisplay {
-        background-color: rgba(46, 204, 113, 0.2);
-    }
-}
+            #factDisplay {
+                background-color: rgba(46, 204, 113, 0.2);
+            }
+        }
 
-/* Animation for fact display */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.fade-in {
-    animation: fadeIn 0.5s ease forwards;
-}
-// Add fade-in animation when displaying new fact
-document.getElementById('generateFact').addEventListener('click', function() {
-    const factDisplay = document.getElementById('factDisplay');
-    const randomIndex = Math.floor(Math.random() * crocodileFacts.length);
-    
-    // Remove the class and void reflow to restart animation
-    factDisplay.classList.remove('fade-in');
-    void factDisplay.offsetWidth;
-    
-    // Add class and update text
-    factDisplay.classList.add('fade-in');
-    factDisplay.textContent = crocodileFacts[randomIndex];
-});
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <button id="generateFact">Generate Fact</button>
+        <p id="factDisplay"></p>
+    </div>
+    <script>
+        const crocodileFacts = [
+            "Crocodiles have been around for over 200 million years, making them one of the oldest living reptiles, surviving the extinction event that wiped out the dinosaurs.",
+            "Crocodiles have one of the strongest bites in the animal kingdom. Their bite force can exceed 3,700 pounds per square inch (psi), which is stronger than that of a great white shark.",
+            "Crocodiles are excellent hunters. They often lie in wait, partially submerged in water, and use their powerful tails to propel themselves towards prey with incredible speed.",
+            "The sex of a crocodile is determined by the temperature of the nest during incubation. Warmer temperatures tend to produce males, while cooler temperatures produce females.",
+            "Crocodiles can swim at speeds of up to 20 miles per hour (32 kilometers per hour) by using their tails to propel themselves through the water.",
+            "Crocodiles can live for a long time, with some species living up to 70 years or more in the wild.",
+            "Unlike many reptiles, crocodiles are quite vocal. They communicate with each other through a variety of sounds, including growls, hisses, and bellows.",
+            "Crocodiles have a four-chambered heart, similar to birds and mammals, which allows them to efficiently oxygenate their blood and stay submerged underwater for extended periods.",
+            "Female crocodiles are known for their maternal instincts. They guard their nests and help their hatchlings reach the water after they emerge from their eggs.",
+            "While they primarily eat fish and mammals, crocodiles are opportunistic feeders and will eat almost anything they can catch, including birds, reptiles, and even other crocodiles."
+        ];
 
+        document.getElementById('generateFact').addEventListener('click', function() {
+            const factDisplay = document.getElementById('factDisplay');
+            const randomIndex = Math.floor(Math.random() * crocodileFacts.length);
+            
+            // Remove the class and void reflow to restart animation
+            factDisplay.classList.remove('fade-in');
+            void factDisplay.offsetWidth;
+            
+            // Add class and update text
+            factDisplay.classList.add('fade-in');
+            factDisplay.textContent = crocodileFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
